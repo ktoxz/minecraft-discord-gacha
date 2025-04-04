@@ -1,7 +1,11 @@
 require('dotenv').config();
 const fs = require('fs');
 const path = require('path');
+require('./db'); // Kết nối Mongo
 const { Client, GatewayIntentBits, Collection } = require('discord.js');
+const connectToDatabase = require('./db');
+
+connectToDatabase();
 
 const client = new Client({
   intents: [
